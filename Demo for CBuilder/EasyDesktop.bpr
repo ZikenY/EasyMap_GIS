@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="..\bin\EasyDesktop.exe"/>
+    <OBJFILES value="EasyDesktop.obj UnitPanelEx.obj UnitFormImportShape.obj 
+      UnitFormSlimQueryResult.obj UnitFormSlimAttrib.obj UnitFormMapAttrib.obj 
+      UnitFormCreateSlim.obj UnitFormEditBar.obj UnitFrmPos.obj 
+      UnitFrmMessager.obj UnitFormMain.obj ..\easylib\ActiveView.obj 
+      ..\easylib\CellQuadTree.obj ..\easylib\ClassFactory.obj 
+      ..\easylib\CommonInclude.obj ..\easylib\CustomEditLayer.obj 
+      ..\easylib\DisplayTransformation.obj ..\easylib\DrawGeometry.obj 
+      ..\easylib\ElementLayer.obj ..\easylib\ExtentAPI.obj ..\easylib\Fields.obj 
+      ..\easylib\FileMapStream.obj ..\easylib\GeoMap.obj ..\easylib\Geometry.obj 
+      ..\easylib\GeometryTracker.obj ..\easylib\GroupLayer.obj 
+      ..\easylib\LayerAgent.obj ..\easylib\MathLib.obj 
+      ..\easylib\MemoryStream.obj ..\easylib\MiniDisplay.obj 
+      ..\easylib\MultiSymbol.obj ..\easylib\Persist.obj ..\easylib\Plot3D.obj 
+      ..\easylib\ScreenDisplay.obj ..\easylib\ShapeAux.obj 
+      ..\easylib\ShapeLayer.obj ..\easylib\SimpleSymbol.obj 
+      ..\easylib\SlimLayer.obj ..\easylib\Stream.obj ..\easylib\StringFuncs.obj 
+      ..\easylib\SupportClasses.obj ..\easylib\SymbolLib.obj 
+      ..\easylib\dbfopen.obj ..\easylib\shpopen.obj ..\easylib\dibapi.obj 
+      ..\easylib\CqOctree.obj ..\easylib\BitmapLayer.obj 
+      ..\easylib\SimpleFileStream.obj ..\easylib\CellNonupleTree.obj 
+      ..\easylib\GeometryLabel.obj ..\easylib\LabelLayer.obj 
+      ..\easylib\NetTopoBase.obj ..\easylib\cMap.obj UnitFormLabelManager.obj"/>
+    <RESFILES value="EasyDesktop.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) UnitFormImportShape.dfm UnitFormSlimQueryResult.dfm 
+      UnitFormSlimAttrib.dfm UnitFormMapAttrib.dfm UnitFormCreateSlim.dfm 
+      UnitFormEditBar.dfm UnitFormMain.dfm UnitFormLabelManager.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="bcbsmp.lib vclx.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib vclx.lib bcbsmp.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib;..\easylib"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="EasyDesktop.cpp"/>
+    <INCLUDEPATH value="..\easylib;..\yylib;..\yy;..\ShapeFile;..\ShapeLib;..\Tx;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;&quot;D:\program files\Borland\CBuilder6\Bin&quot;;..\TabbyMap;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;E:\mything\Tabby\CBDemo;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="..\easylib;..\yylib;..\yy;..\ShapeFile;..\ShapeLib;..\Tx;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;&quot;D:\program files\Borland\CBuilder6\Bin&quot;;..\TabbyMap;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;E:\mything\Tabby\CBDemo;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\easylib -I..\yylib -I..\yy -I..\ShapeFile -I..\ShapeLib -I..\Tx 
+      -I&quot;C:\Program Files\Borland\CBuilder6\Projects&quot; 
+      -I&quot;D:\program files\Borland\CBuilder6\Bin&quot; -I..\TabbyMap 
+      -I&quot;D:\Program Files\Borland\CBuilder6\Projects&quot; -IE:\mything\Tabby\CBDemo 
+      -I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -w- -Vx -Ve -X- -a8 -6 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="EasyDesktop.res" FORMNAME="" UNITNAME="EasyDesktop.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EasyDesktop.cpp" FORMNAME="" UNITNAME="EasyDesktop" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitPanelEx.cpp" FORMNAME="" UNITNAME="UnitPanelEx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormImportShape.cpp" FORMNAME="FormImportShape" UNITNAME="UnitFormImportShape" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormSlimQueryResult.cpp" FORMNAME="FormSlimQueryResult" UNITNAME="UnitFormSlimQueryResult" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormSlimAttrib.cpp" FORMNAME="FormSlimAttrib" UNITNAME="UnitFormSlimAttrib" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormMapAttrib.cpp" FORMNAME="FormMapAttrib" UNITNAME="UnitFormMapAttrib" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormCreateSlim.cpp" FORMNAME="FormCreateSlim" UNITNAME="UnitFormCreateSlim" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormEditBar.cpp" FORMNAME="FormEditBar" UNITNAME="UnitFormEditBar" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFrmPos.cpp" FORMNAME="" UNITNAME="UnitFrmPos" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFrmMessager.cpp" FORMNAME="" UNITNAME="UnitFrmMessager" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormMain.cpp" FORMNAME="FormMain" UNITNAME="UnitFormMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\ActiveView.cpp" FORMNAME="" UNITNAME="ActiveView.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\CellQuadTree.cpp" FORMNAME="" UNITNAME="CellQuadTree.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\ClassFactory.cpp" FORMNAME="" UNITNAME="ClassFactory.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\CommonInclude.cpp" FORMNAME="" UNITNAME="CommonInclude.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\CustomEditLayer.cpp" FORMNAME="" UNITNAME="CustomEditLayer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\DisplayTransformation.cpp" FORMNAME="" UNITNAME="DisplayTransformation.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\DrawGeometry.cpp" FORMNAME="" UNITNAME="DrawGeometry.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\ElementLayer.cpp" FORMNAME="" UNITNAME="ElementLayer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\ExtentAPI.cpp" FORMNAME="" UNITNAME="ExtentAPI.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\Fields.cpp" FORMNAME="" UNITNAME="Fields.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\FileMapStream.cpp" FORMNAME="" UNITNAME="FileMapStream.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\GeoMap.cpp" FORMNAME="" UNITNAME="GeoMap.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\Geometry.cpp" FORMNAME="" UNITNAME="Geometry.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\GeometryTracker.cpp" FORMNAME="" UNITNAME="GeometryTracker.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\GroupLayer.cpp" FORMNAME="" UNITNAME="GroupLayer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\LayerAgent.cpp" FORMNAME="" UNITNAME="LayerAgent.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\MathLib.cpp" FORMNAME="" UNITNAME="MathLib.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\MemoryStream.cpp" FORMNAME="" UNITNAME="MemoryStream.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\MiniDisplay.cpp" FORMNAME="" UNITNAME="MiniDisplay.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\MultiSymbol.cpp" FORMNAME="" UNITNAME="MultiSymbol.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\Persist.cpp" FORMNAME="" UNITNAME="Persist.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\Plot3D.cpp" FORMNAME="" UNITNAME="Plot3D.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\ScreenDisplay.cpp" FORMNAME="" UNITNAME="ScreenDisplay.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\ShapeAux.cpp" FORMNAME="" UNITNAME="ShapeAux.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\ShapeLayer.cpp" FORMNAME="" UNITNAME="ShapeLayer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\SimpleSymbol.cpp" FORMNAME="" UNITNAME="SimpleSymbol.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\SlimLayer.cpp" FORMNAME="" UNITNAME="SlimLayer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\Stream.cpp" FORMNAME="" UNITNAME="Stream.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\StringFuncs.cpp" FORMNAME="" UNITNAME="StringFuncs.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\SupportClasses.cpp" FORMNAME="" UNITNAME="SupportClasses.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\SymbolLib.cpp" FORMNAME="" UNITNAME="SymbolLib.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\dbfopen.c" FORMNAME="" UNITNAME="dbfopen.c" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\shpopen.c" FORMNAME="" UNITNAME="shpopen.c" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\dibapi.cpp" FORMNAME="" UNITNAME="dibapi.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\CqOctree.cpp" FORMNAME="" UNITNAME="CqOctree" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\BitmapLayer.cpp" FORMNAME="" UNITNAME="BitmapLayer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\SimpleFileStream.cpp" FORMNAME="" UNITNAME="SimpleFileStream" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\CellNonupleTree.cpp" FORMNAME="" UNITNAME="CellNonupleTree" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\GeometryLabel.cpp" FORMNAME="" UNITNAME="GeometryLabel" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\LabelLayer.cpp" FORMNAME="" UNITNAME="LabelLayer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\NetTopoBase.cpp" FORMNAME="" UNITNAME="NetTopoBase" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\easylib\cMap.cpp" FORMNAME="" UNITNAME="cMap" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UnitFormLabelManager.cpp" FORMNAME="FormLabelManager" UNITNAME="UnitFormLabelManager" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=2052
+CodePage=936
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+c:\program files\borland\cbuilder6\Bin\dclite60.bpl=Borland Integrated Translation Environment
+
+[HistoryLists\hlIncludePath]
+Count=6
+Item0=..\easylib;..\yylib;..\yy;..\ShapeFile;..\ShapeLib;..\Tx;C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\include;$(BCB)\include\vcl
+Item1=..\yylib;..\yy;..\ShapeFile;..\ShapeLib;..\Tx;C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\include;$(BCB)\include\vcl
+Item2=..\ShapeFile;..\ShapeLib;..\Tx;C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\include;$(BCB)\include\vcl
+Item3=C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\include;$(BCB)\include\vcl
+Item4=D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\include;$(BCB)\include\vcl
+Item5=..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=..\easylib;..\yylib;..\yy;..\ShapeFile;..\ShapeLib;..\Tx;C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\yylib;..\yy;..\ShapeFile;..\ShapeLib;..\Tx;C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\ShapeFile;..\ShapeLib;..\Tx;C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\lib\obj;$(BCB)\lib
+Item3=C:\Program Files\Borland\CBuilder6\Projects;D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\lib\obj;$(BCB)\lib
+Item4=D:\program files\Borland\CBuilder6\Bin;..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\TabbyMap;D:\Program Files\Borland\CBuilder6\Projects;E:\mything\Tabby\CBDemo;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlFinalOutputDir]
+Count=4
+Item0=..\bin\
+Item1=..\bin
+Item2=..\
+Item3=..
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+  </IDEOPTIONS>
+</PROJECT>

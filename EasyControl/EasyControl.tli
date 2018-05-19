@@ -1,0 +1,1490 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (8c424c18).
+//
+// EasyControl.tli
+//
+// Wrapper implementations for Win32 type library EasyControl.tlb
+// compiler-generated file created 05/24/13 at 09:36:25 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _DEasyControl wrapper method implementations
+//
+
+inline VARIANT_BOOL _DEasyControl::NewWorkspace ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::LoadWorkspace ( _bstr_t filename ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008", (BSTR)filename);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::SaveWorkspace ( _bstr_t filename ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x7, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008", (BSTR)filename);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::UpdateView ( ) {
+    return _com_dispatch_method(this, 0x8, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::FullExtentView ( ) {
+    return _com_dispatch_method(this, 0x9, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::GetMapCenter ( double x, double y ) {
+    return _com_dispatch_method(this, 0xa, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005", x, y);
+}
+
+inline HRESULT _DEasyControl::SetMapCenter ( double x, double y ) {
+    return _com_dispatch_method(this, 0xb, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005", x, y);
+}
+
+inline HRESULT _DEasyControl::SetScale ( double scale ) {
+    return _com_dispatch_method(this, 0xc, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005", scale);
+}
+
+inline double _DEasyControl::GetScale ( ) {
+    double _result;
+    _com_dispatch_method(this, 0xd, DISPATCH_METHOD, VT_R8, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::SetViewExtent ( double minx, double miny, double maxx, double maxy ) {
+    return _com_dispatch_method(this, 0xe, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x0005\x0005", minx, miny, maxx, maxy);
+}
+
+inline HRESULT _DEasyControl::GetViewExtent ( double * minx, double * miny, double * maxx, double * maxy ) {
+    return _com_dispatch_method(this, 0xf, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4005\x4005\x4005\x4005", minx, miny, maxx, maxy);
+}
+
+inline HRESULT _DEasyControl::SetActionNone ( ) {
+    return _com_dispatch_method(this, 0x10, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::SetActionZoomin ( ) {
+    return _com_dispatch_method(this, 0x11, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::SetActionZoomout ( ) {
+    return _com_dispatch_method(this, 0x12, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::SetActionPan ( ) {
+    return _com_dispatch_method(this, 0x13, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::ClearLayers ( ) {
+    return _com_dispatch_method(this, 0x14, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::GetFullExtent ( double * minx, double * miny, double * maxx, double * maxy ) {
+    return _com_dispatch_method(this, 0x15, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4005\x4005\x4005\x4005", minx, miny, maxx, maxy);
+}
+
+inline IUnknownPtr _DEasyControl::GetLayer ( long index ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x16, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", index);
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT _DEasyControl::Window2Map ( long lx, long ly, double * dx, double * dy ) {
+    return _com_dispatch_method(this, 0x17, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003\x0003\x4005\x4005", lx, ly, dx, dy);
+}
+
+inline HRESULT _DEasyControl::Map2Window ( double dx, double dy, long * lx, long * ly ) {
+    return _com_dispatch_method(this, 0x18, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x4003\x4003", dx, dy, lx, ly);
+}
+
+inline long _DEasyControl::GetLayerCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x19, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline long _DEasyControl::GetAllLayerCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x1a, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline IUnknownPtr _DEasyControl::LoadSlimDataEx ( IUnknown * grouplayer, _bstr_t filename, VARIANT_BOOL readonly ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x1b, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x000d\x0008\x000b", grouplayer, (BSTR)filename, readonly);
+    return IUnknownPtr(_result, false);
+}
+
+inline IUnknownPtr _DEasyControl::LoadShapeFileEx ( IUnknown * grouplayer, _bstr_t filename, enum EasyUnits mapunit, double basescale, double precision, long indexlevel, VARIANT_BOOL readonly ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x1c, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x000d\x0008\x0003\x0005\x0005\x0003\x000b", grouplayer, (BSTR)filename, mapunit, basescale, precision, indexlevel, readonly);
+    return IUnknownPtr(_result, false);
+}
+
+inline IUnknownPtr _DEasyControl::LoadOrientBmpEx ( IUnknown * grouplayer, _bstr_t filename ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x1d, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x000d\x0008", grouplayer, (BSTR)filename);
+    return IUnknownPtr(_result, false);
+}
+
+inline IUnknownPtr _DEasyControl::NewGroupLayerEx ( IUnknown * parentgrouplayer, _bstr_t newlayername ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x1e, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x000d\x0008", parentgrouplayer, (BSTR)newlayername);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL _DEasyControl::LoadSlimData ( _bstr_t filename, VARIANT_BOOL readonly ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x1f, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008\x000b", (BSTR)filename, readonly);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::LoadShapeFile ( _bstr_t filename, enum EasyUnits mapunit, double basescale, double precision, long indexlevel, VARIANT_BOOL readonly ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x20, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008\x0003\x0005\x0005\x0003\x000b", (BSTR)filename, mapunit, basescale, precision, indexlevel, readonly);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::LoadOrientBmp ( _bstr_t filename ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x21, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008", (BSTR)filename);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::NewElementLayer ( _bstr_t newlayername ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x22, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008", (BSTR)newlayername);
+    return _result;
+}
+
+inline IUnknownPtr _DEasyControl::NewElementLayerEx ( IUnknown * grouplayer, _bstr_t newlayername ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x23, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x000d\x0008", grouplayer, (BSTR)newlayername);
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT _DEasyControl::SetMapUnit ( enum EasyUnits mapunit ) {
+    return _com_dispatch_method(this, 0x24, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", mapunit);
+}
+
+inline enum EasyUnits _DEasyControl::GetMapUnit ( ) {
+    enum EasyUnits _result;
+    _com_dispatch_method(this, 0x25, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::SetReferenceScale ( double refscale ) {
+    return _com_dispatch_method(this, 0x26, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005", refscale);
+}
+
+inline double _DEasyControl::GetReferenceScale ( ) {
+    double _result;
+    _com_dispatch_method(this, 0x27, DISPATCH_METHOD, VT_R8, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::SetLayerOrder ( IUnknown * layer, long neworder ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x28, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d\x0003", layer, neworder);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::DeleteSelectObjects ( ) {
+    return _com_dispatch_method(this, 0x29, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline VARIANT_BOOL _DEasyControl::EditUndo ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2a, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditRedo ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2b, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditSave ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2c, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditCancel ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2d, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::IsEditDirty ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2e, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::SetEditUndoPoint ( _bstr_t desc ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2f, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008", (BSTR)desc);
+    return _result;
+}
+
+inline enum EasyMouseAction _DEasyControl::GetCurrentAction ( ) {
+    enum EasyMouseAction _result;
+    _com_dispatch_method(this, 0x30, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackFeature ( IUnknown * layer, _bstr_t text ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x31, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d\x0008", layer, (BSTR)text);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::SelectByPoint ( ) {
+    return _com_dispatch_method(this, 0x32, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::SelectByEnvelope ( ) {
+    return _com_dispatch_method(this, 0x33, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::DeselectByPoint ( ) {
+    return _com_dispatch_method(this, 0x34, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::DeselectByEnvelope ( ) {
+    return _com_dispatch_method(this, 0x35, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::MoveSelectedObjects ( ) {
+    return _com_dispatch_method(this, 0x36, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackPointElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x37, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackEnvelopeElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x38, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackCircleElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x39, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackEllipseElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3a, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackPolylineElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3b, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackPolygonElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3c, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackFreehandLineElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3d, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackFreehandFillElement ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3e, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::EditTrackTextElement ( IUnknown * layer, _bstr_t text ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3f, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d\x0008", layer, (BSTR)text);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::SetNewElementSymbolParams ( IUnknown * params ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x40, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", params);
+    return _result;
+}
+
+inline IUnknownPtr _DEasyControl::GetNewElementSymbolParams ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x41, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL _DEasyControl::SetNewElementSymbolFromLib ( _bstr_t symbollibfile, long symbolindex ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x42, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008\x0003", (BSTR)symbollibfile, symbolindex);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::AddHighlight ( IUnknown * geometry ) {
+    return _com_dispatch_method(this, 0x43, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000d", geometry);
+}
+
+inline IUnknownPtr _DEasyControl::GetHighlight ( long index ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x44, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", index);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL _DEasyControl::DeleteHighlight ( long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x45, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003", index);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::ClearHighlight ( ) {
+    return _com_dispatch_method(this, 0x46, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::RefreshWindow ( ) {
+    return _com_dispatch_method(this, 0x47, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::SetHighlightParams ( IUnknown * params ) {
+    return _com_dispatch_method(this, 0x48, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000d", params);
+}
+
+inline IUnknownPtr _DEasyControl::GetHighlightParams ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x49, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT _DEasyControl::SetSlimDataMapping ( VARIANT_BOOL mapping ) {
+    return _com_dispatch_method(this, 0x4a, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b", mapping);
+}
+
+inline VARIANT_BOOL _DEasyControl::GetSlimDataMapping ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x4b, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::ClearLabels ( ) {
+    return _com_dispatch_method(this, 0x4c, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline long _DEasyControl::GetLabelLayerCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x4d, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline IUnknownPtr _DEasyControl::GetLabelLayer ( long index ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x4e, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", index);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL _DEasyControl::RemoveLabelLayer ( long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x4f, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003", index);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::LoadLabelLayer ( _bstr_t esd_filename, long labelfield ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x50, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008\x0003", (BSTR)esd_filename, labelfield);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::SetLabelField ( long labellayer, long labelfield ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x51, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003\x0003", labellayer, labelfield);
+    return _result;
+}
+
+inline long _DEasyControl::GetLabelField ( long labellayer ) {
+    long _result;
+    _com_dispatch_method(this, 0x52, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003", labellayer);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::EnableLabels ( VARIANT_BOOL Enable ) {
+    return _com_dispatch_method(this, 0x53, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b", Enable);
+}
+
+inline VARIANT_BOOL _DEasyControl::LabelsEnabled ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x54, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::LoadRapidDrawLayer ( _bstr_t esd_filename, VARIANT_BOOL readonly ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x55, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008\x000b", (BSTR)esd_filename, readonly);
+    return _result;
+}
+
+inline IUnknownPtr _DEasyControl::GetRapidDrawLayer ( long index ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x56, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", index);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL _DEasyControl::RemoveRapidDraw ( long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x57, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003", index);
+    return _result;
+}
+
+inline long _DEasyControl::GetRapidDrawLayerCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x58, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::ClearRapidDrawLayers ( ) {
+    return _com_dispatch_method(this, 0x59, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline VARIANT_BOOL _DEasyControl::AddBookmark ( _bstr_t text ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x5a, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008", (BSTR)text);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::NextBookmark ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x5b, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::PreviousBookmark ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x5c, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL _DEasyControl::DeleteBookmark ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x5d, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline long _DEasyControl::BookmarkCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x5e, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::ClearBookmarks ( ) {
+    return _com_dispatch_method(this, 0x5f, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline IUnknownPtr _DEasyControl::RapidDrawGPS ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x60, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline IUnknownPtr _DEasyControl::FindLayer ( _bstr_t layername ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x61, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0008", (BSTR)layername);
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT _DEasyControl::SetPlaneRotate ( double degree ) {
+    return _com_dispatch_method(this, 0x62, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005", degree);
+}
+
+inline double _DEasyControl::GetPlaneRotate ( ) {
+    double _result;
+    _com_dispatch_method(this, 0x63, DISPATCH_METHOD, VT_R8, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::SetAttitude ( double degree ) {
+    return _com_dispatch_method(this, 0x64, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005", degree);
+}
+
+inline double _DEasyControl::GetAttitude ( ) {
+    double _result;
+    _com_dispatch_method(this, 0x65, DISPATCH_METHOD, VT_R8, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _DEasyControl::SetRotateCenter ( double x, double y ) {
+    return _com_dispatch_method(this, 0x66, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005", x, y);
+}
+
+inline HRESULT _DEasyControl::GetRotateCenter ( double * x, double * y ) {
+    return _com_dispatch_method(this, 0x67, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4005\x4005", x, y);
+}
+
+inline HRESULT _DEasyControl::DisableActiveBookmarkShow ( ) {
+    return _com_dispatch_method(this, 0x68, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _DEasyControl::AboutBox ( ) {
+    return _com_dispatch_method(this, DISPID_ABOUTBOX, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline OLE_COLOR _DEasyControl::GetBackColor ( ) {
+    OLE_COLOR _result;
+    _com_dispatch_propget(this, 0x1, VT_I4, (void*)&_result);
+    return _result;
+}
+
+inline void _DEasyControl::PutBackColor ( OLE_COLOR _val ) {
+    _com_dispatch_propput(this, 0x1, VT_I4, _val);
+}
+
+inline VARIANT_BOOL _DEasyControl::GetPartialSelect ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_propget(this, 0x2, VT_BOOL, (void*)&_result);
+    return _result;
+}
+
+inline void _DEasyControl::PutPartialSelect ( VARIANT_BOOL _val ) {
+    _com_dispatch_propput(this, 0x2, VT_BOOL, _val);
+}
+
+inline VARIANT_BOOL _DEasyControl::GetSelectAppend ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_propget(this, 0x3, VT_BOOL, (void*)&_result);
+    return _result;
+}
+
+inline void _DEasyControl::PutSelectAppend ( VARIANT_BOOL _val ) {
+    _com_dispatch_propput(this, 0x3, VT_BOOL, _val);
+}
+
+inline VARIANT_BOOL _DEasyControl::GetWheelZoomable ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_propget(this, 0x4, VT_BOOL, (void*)&_result);
+    return _result;
+}
+
+inline void _DEasyControl::PutWheelZoomable ( VARIANT_BOOL _val ) {
+    _com_dispatch_propput(this, 0x4, VT_BOOL, _val);
+}
+
+//
+// dispinterface _DEasyControlEvents wrapper method implementations
+//
+
+inline HRESULT _DEasyControlEvents::ViewExtentChange ( double minx, double miny, double maxx, double maxy ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x0005\x0005", minx, miny, maxx, maxy);
+}
+
+inline HRESULT _DEasyControlEvents::MouseDown ( short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y ) {
+    return _com_dispatch_method(this, DISPID_MOUSEDOWN, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0002\x0002\x0003\x0003", Button, Shift, x, y);
+}
+
+inline HRESULT _DEasyControlEvents::MouseUp ( short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y ) {
+    return _com_dispatch_method(this, DISPID_MOUSEUP, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0002\x0002\x0003\x0003", Button, Shift, x, y);
+}
+
+inline HRESULT _DEasyControlEvents::MouseMove ( short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y ) {
+    return _com_dispatch_method(this, DISPID_MOUSEMOVE, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0002\x0002\x0003\x0003", Button, Shift, x, y);
+}
+
+inline HRESULT _DEasyControlEvents::KeyDown ( short * KeyCode, short Shift ) {
+    return _com_dispatch_method(this, DISPID_KEYDOWN, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4002\x0002", KeyCode, Shift);
+}
+
+inline HRESULT _DEasyControlEvents::KeyUp ( short * KeyCode, short Shift ) {
+    return _com_dispatch_method(this, DISPID_KEYUP, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4002\x0002", KeyCode, Shift);
+}
+
+inline HRESULT _DEasyControlEvents::NewFeatureTracked ( long fid, VARIANT_BOOL * setundopoint ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003\x400b", fid, setundopoint);
+}
+
+inline HRESULT _DEasyControlEvents::OnPaint ( long dc ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", dc);
+}
+
+inline HRESULT _DEasyControlEvents::ObjectsMoved ( VARIANT_BOOL * setundopoint ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x400b", setundopoint);
+}
+
+inline HRESULT _DEasyControlEvents::NewElementTracked ( long id, VARIANT_BOOL * setundopoint ) {
+    return _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003\x400b", id, setundopoint);
+}
+
+//
+// dispinterface IEasyEnvelope wrapper method implementations
+//
+
+inline HRESULT IEasyEnvelope::SetCoordinates ( double minx, double miny, double maxx, double maxy ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x0005\x0005", minx, miny, maxx, maxy);
+}
+
+inline HRESULT IEasyEnvelope::GetCoordinates ( double * minx, double * miny, double * maxx, double * maxy ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4005\x4005\x4005\x4005", minx, miny, maxx, maxy);
+}
+
+inline long IEasyEnvelope::innergetrawgeometryptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyPoint wrapper method implementations
+//
+
+inline HRESULT IEasyPoint::SetCoordinates ( double x, double y, double z ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x0005", x, y, z);
+}
+
+inline HRESULT IEasyPoint::GetCoordinates ( double * x, double * y, double * z ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4005\x4005\x4005", x, y, z);
+}
+
+inline long IEasyPoint::innergetrawgeometryptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyPoints wrapper method implementations
+//
+
+inline HRESULT IEasyPoints::AddPoint ( double x, double y, double z ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x0005", x, y, z);
+}
+
+inline VARIANT_BOOL IEasyPoints::GetPoint ( double * x, double * y, double * z, long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x4005\x4005\x4005\x0003", x, y, z, index);
+    return _result;
+}
+
+inline long IEasyPoints::GetPointCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyPoints::ClearPoints ( ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline long IEasyPoints::innergetrawgeometryptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyPath wrapper method implementations
+//
+
+inline HRESULT IEasyPath::AddPoint ( double x, double y, double z ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x0005", x, y, z);
+}
+
+inline VARIANT_BOOL IEasyPath::GetPoint ( double * x, double * y, double * z, long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x4005\x4005\x4005\x0003", x, y, z, index);
+    return _result;
+}
+
+inline long IEasyPath::GetPointCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyPath::ClearPoints ( ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline long IEasyPath::innergetrawgeometryptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyRing wrapper method implementations
+//
+
+inline HRESULT IEasyRing::AddPoint ( double x, double y, double z ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005\x0005", x, y, z);
+}
+
+inline VARIANT_BOOL IEasyRing::GetPoint ( double * x, double * y, double * z, long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x4005\x4005\x4005\x0003", x, y, z, index);
+    return _result;
+}
+
+inline long IEasyRing::GetPointCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyRing::ClearPoints ( ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline long IEasyRing::innergetrawgeometryptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyPolyline wrapper method implementations
+//
+
+inline HRESULT IEasyPolyline::AddPath ( IUnknown * path ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000d", path);
+}
+
+inline IUnknownPtr IEasyPolyline::GetPath ( long index ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", index);
+    return IUnknownPtr(_result, false);
+}
+
+inline long IEasyPolyline::GetPathCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyPolyline::ClearPath ( ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline long IEasyPolyline::innergetrawgeometryptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyPolygon wrapper method implementations
+//
+
+inline HRESULT IEasyPolygon::AddRing ( IUnknown * ring ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000d", ring);
+}
+
+inline IUnknownPtr IEasyPolygon::GetRing ( long index ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", index);
+    return IUnknownPtr(_result, false);
+}
+
+inline long IEasyPolygon::GetRingCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyPolygon::ClearRings ( ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline long IEasyPolygon::innergetrawgeometryptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyLayer wrapper method implementations
+//
+
+inline HRESULT IEasyLayer::GetExtent ( double * minx, double * miny, double * maxx, double * maxy ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4005\x4005\x4005\x4005", minx, miny, maxx, maxy);
+}
+
+inline double IEasyLayer::GetBascScale ( ) {
+    double _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_R8, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyLayer::SetName ( _bstr_t layername ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0008", (BSTR)layername);
+}
+
+inline _bstr_t IEasyLayer::GetName ( ) {
+    BSTR _result;
+    _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_BSTR, (void*)&_result, NULL);
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IEasyLayer::SetVisible ( VARIANT_BOOL visible ) {
+    return _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b", visible);
+}
+
+inline VARIANT_BOOL IEasyLayer::GetVisible ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyLayer::SetAlpha ( long alpha ) {
+    return _com_dispatch_method(this, 0x7, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", alpha);
+}
+
+inline long IEasyLayer::GetAlpha ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x8, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyLayer::SetScaleLimit ( double maxscale, double minscale ) {
+    return _com_dispatch_method(this, 0x9, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005", maxscale, minscale);
+}
+
+inline HRESULT IEasyLayer::GetScaleLimit ( double * maxscale, double * minscale ) {
+    return _com_dispatch_method(this, 0xa, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x4005\x4005", maxscale, minscale);
+}
+
+inline HRESULT IEasyLayer::SetTag ( long tag ) {
+    return _com_dispatch_method(this, 0xb, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", tag);
+}
+
+inline long IEasyLayer::GetTag ( ) {
+    long _result;
+    _com_dispatch_method(this, 0xc, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyLayer::SetSelectable ( VARIANT_BOOL selectable ) {
+    return _com_dispatch_method(this, 0xd, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b", selectable);
+}
+
+inline VARIANT_BOOL IEasyLayer::GetSelectable ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0xe, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline long IEasyLayer::Select ( double minx, double miny, double maxx, double maxy, VARIANT_BOOL PartialSelect, VARIANT_BOOL append ) {
+    long _result;
+    _com_dispatch_method(this, 0xf, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0005\x0005\x0005\x0005\x000b\x000b", minx, miny, maxx, maxy, PartialSelect, append);
+    return _result;
+}
+
+inline long IEasyLayer::Deselect ( double minx, double miny, double maxx, double maxy, VARIANT_BOOL PartialSelect ) {
+    long _result;
+    _com_dispatch_method(this, 0x10, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0005\x0005\x0005\x0005\x000b", minx, miny, maxx, maxy, PartialSelect);
+    return _result;
+}
+
+inline long IEasyLayer::GetSelectCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x11, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyLayer::ClearSelection ( ) {
+    return _com_dispatch_method(this, 0x12, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline enum EasyLayerType IEasyLayer::GetLayerType ( ) {
+    enum EasyLayerType _result;
+    _com_dispatch_method(this, 0x13, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline long IEasyLayer::GetSubLayerCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x14, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline IUnknownPtr IEasyLayer::GetSubLayer ( long index ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x15, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", index);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL IEasyLayer::DeleteSubLayer ( long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x16, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003", index);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::AddSubLayer ( IUnknown * layer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x17, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", layer);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::ClearLayers ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x18, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline long IEasyLayer::innergetrawlayerptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0x19, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+inline long IEasyLayer::GetAllSubLayerCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x1a, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::DeleteSubLayerEx ( IUnknown * sublayer ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x1b, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", sublayer);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::SetSubLayerOrder ( IUnknown * sublayer, long neworder ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x1c, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d\x0003", sublayer, neworder);
+    return _result;
+}
+
+inline enum EasyFeatureLayerType IEasyLayer::GetFeatureLayerType ( ) {
+    enum EasyFeatureLayerType _result;
+    _com_dispatch_method(this, 0x1d, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::GetFeatureLayerInfo ( double * basescale, enum EasyUnits * mapunit, double * precision ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x1e, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x4005\x4003\x4005", basescale, mapunit, precision);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::SetDefaultSymbolFromLib ( _bstr_t symbollibfile, long symbolindex ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x1f, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008\x0003", (BSTR)symbollibfile, symbolindex);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::SetDefaultSymbolFromUI ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x20, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::SetDefaultSymbolParam ( IUnknown * param ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x21, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", param);
+    return _result;
+}
+
+inline IUnknownPtr IEasyLayer::GetDefaultSymbolParam ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x22, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline long IEasyLayer::GetAttribFieldCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x23, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline enum EasyFieldType IEasyLayer::GetAttribFieldType ( long fieldindex ) {
+    enum EasyFieldType _result;
+    _com_dispatch_method(this, 0x24, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003", fieldindex);
+    return _result;
+}
+
+inline _bstr_t IEasyLayer::GetAttribFieldName ( long fieldindex ) {
+    BSTR _result;
+    _com_dispatch_method(this, 0x25, DISPATCH_METHOD, VT_BSTR, (void*)&_result, 
+        L"\x0003", fieldindex);
+    return _bstr_t(_result, false);
+}
+
+inline IUnknownPtr IEasyLayer::GetSelection ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x26, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline IUnknownPtr IEasyLayer::GetFeature ( long fid ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x27, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003", fid);
+    return IUnknownPtr(_result, false);
+}
+
+inline IUnknownPtr IEasyLayer::CreateFeature ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x28, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT IEasyLayer::DeleteSelectedObjects ( ) {
+    return _com_dispatch_method(this, 0x29, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT IEasyLayer::MoveSelectedObject ( double deltax, double deltay ) {
+    return _com_dispatch_method(this, 0x2a, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005\x0005", deltax, deltay);
+}
+
+inline long IEasyLayer::AddGeometryElement ( IUnknown * geometry ) {
+    long _result;
+    _com_dispatch_method(this, 0x2b, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000d", geometry);
+    return _result;
+}
+
+inline long IEasyLayer::AddTextElement ( double point_x, double point_y, _bstr_t text ) {
+    long _result;
+    _com_dispatch_method(this, 0x2c, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0005\x0005\x0008", point_x, point_y, (BSTR)text);
+    return _result;
+}
+
+inline IUnknownPtr IEasyLayer::GetElement ( long id, BSTR * text, VARIANT_BOOL * istext ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x2d, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0003\x4008\x400b", id, text, istext);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL IEasyLayer::SetElement ( long id, IUnknown * geometry, _bstr_t text ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2e, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003\x000d\x0008", id, geometry, (BSTR)text);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::RemoveElement ( long id ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2f, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003", id);
+    return _result;
+}
+
+inline IUnknownPtr IEasyLayer::Identify ( double minx, double miny, double maxx, double maxy, VARIANT_BOOL PartialSelect ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x30, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0005\x0005\x0005\x0005\x000b", minx, miny, maxx, maxy, PartialSelect);
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT IEasyLayer::SelectAll ( ) {
+    return _com_dispatch_method(this, 0x31, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline IUnknownPtr IEasyLayer::FindSubLayer ( _bstr_t layername ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x32, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, 
+        L"\x0008", (BSTR)layername);
+    return IUnknownPtr(_result, false);
+}
+
+inline VARIANT_BOOL IEasyLayer::ModifyGPSPoint ( long fid, double x, double y ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x33, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003\x0005\x0005", fid, x, y);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::GetMapEditable ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x34, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::SaveEdit ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x35, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::DiscardEdit ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x36, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::setundopoint ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x37, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::Undo ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x38, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::Redo ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x39, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::Undoable ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3a, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::Redoable ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3b, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::SetMapEditable ( VARIANT_BOOL editable ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3c, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000b", editable);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyLayer::ShowRendererUI ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x3d, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+//
+// dispinterface ILayerDisplayParams wrapper method implementations
+//
+
+inline long ILayerDisplayParams::GetColor ( ) {
+    long _result;
+    _com_dispatch_propget(this, 0x1, VT_I4, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutColor ( long _val ) {
+    _com_dispatch_propput(this, 0x1, VT_I4, _val);
+}
+
+inline long ILayerDisplayParams::GetOuterLineColor ( ) {
+    long _result;
+    _com_dispatch_propget(this, 0x2, VT_I4, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutOuterLineColor ( long _val ) {
+    _com_dispatch_propput(this, 0x2, VT_I4, _val);
+}
+
+inline double ILayerDisplayParams::GetOuterLineWidth ( ) {
+    double _result;
+    _com_dispatch_propget(this, 0x3, VT_R8, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutOuterLineWidth ( double _val ) {
+    _com_dispatch_propput(this, 0x3, VT_R8, _val);
+}
+
+inline double ILayerDisplayParams::GetFontWidth ( ) {
+    double _result;
+    _com_dispatch_propget(this, 0x4, VT_R8, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutFontWidth ( double _val ) {
+    _com_dispatch_propput(this, 0x4, VT_R8, _val);
+}
+
+inline double ILayerDisplayParams::GetFontHeight ( ) {
+    double _result;
+    _com_dispatch_propget(this, 0x5, VT_R8, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutFontHeight ( double _val ) {
+    _com_dispatch_propput(this, 0x5, VT_R8, _val);
+}
+
+inline double ILayerDisplayParams::GetPointAngle ( ) {
+    double _result;
+    _com_dispatch_propget(this, 0x6, VT_R8, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutPointAngle ( double _val ) {
+    _com_dispatch_propput(this, 0x6, VT_R8, _val);
+}
+
+inline double ILayerDisplayParams::GetPointSize ( ) {
+    double _result;
+    _com_dispatch_propget(this, 0x7, VT_R8, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutPointSize ( double _val ) {
+    _com_dispatch_propput(this, 0x7, VT_R8, _val);
+}
+
+inline double ILayerDisplayParams::GetLineWidth ( ) {
+    double _result;
+    _com_dispatch_propget(this, 0x8, VT_R8, (void*)&_result);
+    return _result;
+}
+
+inline void ILayerDisplayParams::PutLineWidth ( double _val ) {
+    _com_dispatch_propput(this, 0x8, VT_R8, _val);
+}
+
+//
+// dispinterface IEasyFeature wrapper method implementations
+//
+
+inline VARIANT_BOOL IEasyFeature::SetGeometry ( IUnknown * geometry ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x000d", geometry);
+    return _result;
+}
+
+inline IUnknownPtr IEasyFeature::GetGeometry ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline long IEasyFeature::GetFid ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline IUnknownPtr IEasyFeature::GetMBR ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline IUnknownPtr IEasyFeature::GetLayer ( ) {
+    IUnknown * _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_UNKNOWN, (void*)&_result, NULL);
+    return IUnknownPtr(_result, false);
+}
+
+inline long IEasyFeature::GetFieldCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyFeature::SetFieldValue ( long fieldindex, _bstr_t fieldvalue ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x7, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003\x0008", fieldindex, (BSTR)fieldvalue);
+    return _result;
+}
+
+inline _bstr_t IEasyFeature::GetFieldValue ( long fieldindex ) {
+    BSTR _result;
+    _com_dispatch_method(this, 0x8, DISPATCH_METHOD, VT_BSTR, (void*)&_result, 
+        L"\x0003", fieldindex);
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IEasyFeature::SetAnnotation ( _bstr_t annotation ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x9, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0008", (BSTR)annotation);
+    return _result;
+}
+
+inline _bstr_t IEasyFeature::GetAnnotation ( ) {
+    BSTR _result;
+    _com_dispatch_method(this, 0xa, DISPATCH_METHOD, VT_BSTR, (void*)&_result, NULL);
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IEasyFeature::Delete ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0xb, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyFeature::Update ( ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0xc, DISPATCH_METHOD, VT_BOOL, (void*)&_result, NULL);
+    return _result;
+}
+
+inline long IEasyFeature::innergetrawfeatureptr ( VARIANT_BOOL addref ) {
+    long _result;
+    _com_dispatch_method(this, 0xd, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x000b", addref);
+    return _result;
+}
+
+//
+// dispinterface IEasyIntArray wrapper method implementations
+//
+
+inline long IEasyIntArray::Add ( long newvalue ) {
+    long _result;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003", newvalue);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyIntArray::Remove ( long index ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003", index);
+    return _result;
+}
+
+inline long IEasyIntArray::GetCount ( ) {
+    long _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IEasyIntArray::Clear ( ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline VARIANT_BOOL IEasyIntArray::GetAt ( long index, long * value ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003\x4003", index, value);
+    return _result;
+}
+
+inline VARIANT_BOOL IEasyIntArray::SetAt ( long index, long newvalue ) {
+    VARIANT_BOOL _result;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_BOOL, (void*)&_result, 
+        L"\x0003\x0003", index, newvalue);
+    return _result;
+}

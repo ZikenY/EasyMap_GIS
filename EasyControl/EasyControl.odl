@@ -1,0 +1,677 @@
+// EasyControl.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (EasyControl.tlb) that will become a resource in
+// EasyControl.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(6607E61F-2926-45E6-90FE-BEC12B6CF94E), version(1.0),
+  helpfile("EasyControl.hlp"),
+  helpstring("EasyControl ActiveX Control module"),
+  control ]
+library EASYCONTROLLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	typedef enum EasyMouseAction
+	{
+		ActionDefault,
+		ActionZoomIn,
+		ActionZoomOut,
+		ActionPan,
+		ActionSelectByPoint,
+		ActionSelectByEnvelope,
+		ActionDeselectByPoint,
+		ActionDeselectByEnvelope,
+		ActionTrackFeature,
+		ActionMoveSelectedObjects,
+		ActionTrackPointElement,
+		ActionTrackEnvelopeElement,
+		ActionTrackCircleElement,
+		ActionTrackEllipseElement,
+		ActionTrackPolylineElement,
+		ActionTrackPolygonElement,
+		ActionTrackFreehandLineElement,
+		ActionTrackFreehandFillElement,
+		ActionTrackTextElement
+	}EasyMouseAction;
+
+	typedef enum EasyUnits
+	{
+		UNIT_DEGREE,
+		UNIT_M,
+		UNIT_KM,
+		UNIT_CM,
+		UNIT_MM,
+		UNIT_MILE,
+		UNIT_NAUTICALMILE,
+		UNIT_INCH,
+		UNIT_FOOT,
+	}EasyUnits;
+
+	typedef enum EasyLayerType
+	{
+		EASYLAYERTYPE_UNKNOWN,
+		EASYLAYERTYPE_GROUPLAYER,
+		EASYLAYERTYPE_SLIMLAYER,
+		EASYLAYERTYPE_SHAPELAYER,
+		EASYLAYERTYPE_BITMAPLAYER,
+		EASYLAYERTYPE_ELEMENTLAYER,
+		EASYLAYERTYPE_LABELLAYER
+	}EasyLayerType;
+
+	typedef enum EasyFeatureLayerType
+	{
+		EASYFEATURELAYERTYPE_UNKNOWN,
+		EASYFEATURELAYERTYPE_POINT,
+		EASYFEATURELAYERTYPE_MULTIPOINT,
+		EASYFEATURELAYERTYPE_POLYLINE,
+		EASYFEATURELAYERTYPE_POLYGON,
+		EASYFEATURELAYERTYPE_ANNOTATION
+	}EasyFeatureLayerType;
+
+	typedef enum EasyFieldType
+	{
+		EASYFIELDTYPE_UNKNOWN,
+		EASYFIELDTYPE_SHORT,
+		EASYFIELDTYPE_LONG,
+		EASYFIELDTYPE_SINGLE,
+		EASYFIELDTYPE_DOUBLE,
+		EASYFIELDTYPE_STRING
+	}EasyFieldType;
+
+	//  Primary dispatch interface for CEasyControlCtrl
+
+	[ uuid(AEDD17EB-A11A-4FED-A68B-FE7A3AC5C93E),
+	  helpstring("Dispatch interface for EasyControl Control"), hidden ]
+	dispinterface _DEasyControl
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyControlCtrl)
+			[id(1)] OLE_COLOR BackColor;
+			[id(2)] boolean PartialSelect;
+			[id(3)] boolean SelectAppend;
+			[id(4)] boolean WheelZoomable;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyControlCtrl)
+			[id(5)] boolean NewWorkspace();
+			[id(6)] boolean LoadWorkspace(BSTR filename);
+			[id(7)] boolean SaveWorkspace(BSTR filename);
+			[id(8)] void UpdateView();
+			[id(9)] void FullExtentView();
+			[id(10)] void GetMapCenter(double x, double y);
+			[id(11)] void SetMapCenter(double x, double y);
+			[id(12)] void SetScale(double scale);
+			[id(13)] double GetScale();
+			[id(14)] void SetViewExtent(double minx, double miny, double maxx, double maxy);
+			[id(15)] void GetViewExtent(double* minx, double* miny, double* maxx, double* maxy);
+			[id(16)] void SetActionNone();
+			[id(17)] void SetActionZoomin();
+			[id(18)] void SetActionZoomout();
+			[id(19)] void SetActionPan();
+			[id(20)] void ClearLayers();
+			[id(21)] void GetFullExtent(double* minx, double* miny, double* maxx, double* maxy);
+			[id(22)] IUnknown* GetLayer(long index);
+			[id(23)] void Window2Map(long lx, long ly, double* dx, double* dy);
+			[id(24)] void Map2Window(double dx, double dy, long* lx, long* ly);
+			[id(25)] long GetLayerCount();
+			[id(26)] long GetAllLayerCount();
+			[id(27)] IUnknown* LoadSlimDataEx(IUnknown* grouplayer, BSTR filename, boolean readonly);
+			[id(28)] IUnknown* LoadShapeFileEx(IUnknown* grouplayer, BSTR filename, EasyUnits mapunit, double basescale, double precision, long indexlevel, boolean readonly);
+			[id(29)] IUnknown* LoadOrientBmpEx(IUnknown* grouplayer, BSTR filename);
+			[id(30)] IUnknown* NewGroupLayerEx(IUnknown* parentgrouplayer, BSTR newlayername);
+			[id(31)] boolean LoadSlimData(BSTR filename, boolean readonly);
+			[id(32)] boolean LoadShapeFile(BSTR filename, EasyUnits mapunit, double basescale, double precision, long indexlevel, boolean readonly);
+			[id(33)] boolean LoadOrientBmp(BSTR filename);
+			[id(34)] boolean NewElementLayer(BSTR newlayername);
+			[id(35)] IUnknown* NewElementLayerEx(IUnknown* grouplayer, BSTR newlayername);
+			[id(36)] void SetMapUnit(EasyUnits mapunit);
+			[id(37)] EasyUnits GetMapUnit();
+			[id(38)] void SetReferenceScale(double refscale);
+			[id(39)] double GetReferenceScale();
+			[id(40)] boolean SetLayerOrder(IUnknown* layer, long neworder);
+			[id(41)] void DeleteSelectObjects();
+			[id(42)] boolean EditUndo();
+			[id(43)] boolean EditRedo();
+			[id(44)] boolean EditSave();
+			[id(45)] boolean EditCancel();
+			[id(46)] boolean IsEditDirty();
+			[id(47)] boolean SetEditUndoPoint(BSTR desc);
+			[id(48)] EasyMouseAction GetCurrentAction();
+			[id(49)] boolean EditTrackFeature(IUnknown* layer, BSTR text);
+			[id(50)] void SelectByPoint();
+			[id(51)] void SelectByEnvelope();
+			[id(52)] void DeselectByPoint();
+			[id(53)] void DeselectByEnvelope();
+			[id(54)] void MoveSelectedObjects();
+			[id(55)] boolean EditTrackPointElement(IUnknown* layer);
+			[id(56)] boolean EditTrackEnvelopeElement(IUnknown* layer);
+			[id(57)] boolean EditTrackCircleElement(IUnknown* layer);
+			[id(58)] boolean EditTrackEllipseElement(IUnknown* layer);
+			[id(59)] boolean EditTrackPolylineElement(IUnknown* layer);
+			[id(60)] boolean EditTrackPolygonElement(IUnknown* layer);
+			[id(61)] boolean EditTrackFreehandLineElement(IUnknown* layer);
+			[id(62)] boolean EditTrackFreehandFillElement(IUnknown* layer);
+			[id(63)] boolean EditTrackTextElement(IUnknown* layer, BSTR text);
+			[id(64)] boolean SetNewElementSymbolParams(IUnknown* params);
+			[id(65)] IUnknown* GetNewElementSymbolParams();
+			[id(66)] boolean SetNewElementSymbolFromLib(BSTR symbollibfile, long symbolindex);
+			[id(67)] void AddHighlight(IUnknown* geometry);
+			[id(68)] IUnknown* GetHighlight(long index);
+			[id(69)] boolean DeleteHighlight(long index);
+			[id(70)] void ClearHighlight();
+			[id(71)] void RefreshWindow();
+			[id(72)] void SetHighlightParams(IUnknown* params);
+			[id(73)] IUnknown* GetHighlightParams();
+			[id(74)] void SetSlimDataMapping(boolean mapping);
+			[id(75)] boolean GetSlimDataMapping();
+			[id(76)] void ClearLabels();
+			[id(77)] long GetLabelLayerCount();
+			[id(78)] IUnknown* GetLabelLayer(long index);
+			[id(79)] boolean RemoveLabelLayer(long index);
+			[id(80)] boolean LoadLabelLayer(BSTR esd_filename, long labelfield);
+			[id(81)] boolean SetLabelField(long labellayer, long labelfield);
+			[id(82)] long GetLabelField(long labellayer);
+			[id(83)] void EnableLabels(boolean Enable);
+			[id(84)] boolean LabelsEnabled();
+			[id(85)] boolean LoadRapidDrawLayer(BSTR esd_filename, boolean readonly);
+			[id(86)] IUnknown* GetRapidDrawLayer(long index);
+			[id(87)] boolean RemoveRapidDraw(long index);
+			[id(88)] long GetRapidDrawLayerCount();
+			[id(89)] void ClearRapidDrawLayers();
+			[id(90)] boolean AddBookmark(BSTR text);
+			[id(91)] boolean NextBookmark();
+			[id(92)] boolean PreviousBookmark();
+			[id(93)] boolean DeleteBookmark();
+			[id(94)] long BookmarkCount();
+			[id(95)] void ClearBookmarks();
+			[id(96)] IUnknown* RapidDrawGPS();
+			[id(97)] IUnknown* FindLayer(BSTR layername);
+			[id(98)] void SetPlaneRotate(double degree);
+			[id(99)] double GetPlaneRotate();
+			[id(100)] void SetAttitude(double degree);
+			[id(101)] double GetAttitude();
+			[id(102)] void SetRotateCenter(double x, double y);
+			[id(103)] void GetRotateCenter(double* x, double* y);
+			[id(104)] void DisableActiveBookmarkShow();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CEasyControlCtrl
+
+	[ uuid(2BAF88E9-C1D9-4B54-B466-F560E3D19A79),
+	  helpstring("Event interface for EasyControl Control") ]
+	dispinterface _DEasyControlEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CEasyControlCtrl)
+			[id(1)] void ViewExtentChange(double minx, double miny, double maxx, double maxy);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEMOVE)] void MouseMove(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_KEYDOWN)] void KeyDown(short* KeyCode, short Shift);
+			[id(DISPID_KEYUP)] void KeyUp(short* KeyCode, short Shift);
+			[id(2)] void NewFeatureTracked(long fid, boolean* setundopoint);
+			[id(3)] void OnPaint(long dc);
+			[id(4)] void ObjectsMoved(boolean* setundopoint);
+			[id(5)] void NewElementTracked(long id, boolean* setundopoint);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CEasyControlCtrl
+
+	[ uuid(FCE3D833-3FB6-4503-941D-5CA989798B89),
+	  helpstring("EasyControl Control"), control ]
+	coclass EasyControl
+	{
+		[default] dispinterface _DEasyControl;
+		[default, source] dispinterface _DEasyControlEvents;
+	};
+
+
+	//  Primary dispatch interface for CEasyEnvelope
+	
+	[ uuid(B2C65505-F2E7-4035-8156-A4266E57CEA1) ]
+	dispinterface IEasyEnvelope
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyEnvelope)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyEnvelope)
+			[id(1)] void SetCoordinates(double minx, double miny, double maxx, double maxy);
+			[id(2)] void GetCoordinates(double* minx, double* miny, double* maxx, double* maxy);
+			[id(3)] long innergetrawgeometryptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyEnvelope
+
+	[ uuid(5563121A-7787-4FCE-93F7-32234F92151C) ]
+	coclass EasyEnvelope
+	{
+		[default] dispinterface IEasyEnvelope;
+	};
+
+
+	//  Primary dispatch interface for CEasyPoint
+	
+	[ uuid(3EB46055-E4DA-46BD-9BBB-A156D25F64C9) ]
+	dispinterface IEasyPoint
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyPoint)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyPoint)
+			[id(1)] void SetCoordinates(double x, double y, double z);
+			[id(2)] void GetCoordinates(double* x, double* y, double* z);
+			[id(3)] long innergetrawgeometryptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyPoint
+
+	[ uuid(123ACC11-9497-4421-9D2A-C6D745873DE5) ]
+	coclass EasyPoint
+	{
+		[default] dispinterface IEasyPoint;
+	};
+
+
+	//  Primary dispatch interface for CEasyPoints
+	
+	[ uuid(74C11A15-B516-4F45-97BD-C866BE2EB1F6) ]
+	dispinterface IEasyPoints
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyPoints)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyPoints)
+			[id(1)] void AddPoint(double x, double y, double z);
+			[id(2)] boolean GetPoint(double* x, double* y, double* z, long index);
+			[id(3)] long GetPointCount();
+			[id(4)] void ClearPoints();
+			[id(5)] long innergetrawgeometryptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyPoints
+
+	[ uuid(6D82EB14-1A81-45CB-B289-A8F82F09B2D2) ]
+	coclass EasyPoints
+	{
+		[default] dispinterface IEasyPoints;
+	};
+
+
+	//  Primary dispatch interface for CEasyPath
+	
+	[ uuid(976E1897-AE8C-4219-B7BD-6B65D41A0D7F) ]
+	dispinterface IEasyPath
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyPath)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyPath)
+			[id(1)] void AddPoint(double x, double y, double z);
+			[id(2)] boolean GetPoint(double* x, double* y, double* z, long index);
+			[id(3)] long GetPointCount();
+			[id(4)] void ClearPoints();
+			[id(5)] long innergetrawgeometryptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyPath
+
+	[ uuid(8BFBC8FF-476D-4C67-A63E-0519384A9311) ]
+	coclass EasyPath
+	{
+		[default] dispinterface IEasyPath;
+	};
+
+
+	//  Primary dispatch interface for CEasyRing
+	
+	[ uuid(9C5AC2F8-B7A3-47FA-83A8-D918D09EE103) ]
+	dispinterface IEasyRing
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyRing)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyRing)
+			[id(1)] void AddPoint(double x, double y, double z);
+			[id(2)] boolean GetPoint(double* x, double* y, double* z, long index);
+			[id(3)] long GetPointCount();
+			[id(4)] void ClearPoints();
+			[id(5)] long innergetrawgeometryptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyRing
+
+	[ uuid(3631B8DC-0BE1-443F-A65B-ADB58F907EA2) ]
+	coclass EasyRing
+	{
+		[default] dispinterface IEasyRing;
+	};
+
+
+	//  Primary dispatch interface for CEasyPolyline
+	
+	[ uuid(C01C9BAC-AFE2-4236-ACE7-7074ABE05FBA) ]
+	dispinterface IEasyPolyline
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyPolyline)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyPolyline)
+			[id(1)] void AddPath(IUnknown* path);
+			[id(2)] IUnknown* GetPath(long index);
+			[id(3)] long GetPathCount();
+			[id(4)] void ClearPath();
+			[id(5)] long innergetrawgeometryptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyPolyline
+
+	[ uuid(CD30F34E-892E-486E-A8F4-AF5D6F0AC9E3) ]
+	coclass EasyPolyline
+	{
+		[default] dispinterface IEasyPolyline;
+	};
+
+
+	//  Primary dispatch interface for CEasyPolygon
+	
+	[ uuid(A19D8A1A-1421-4DD7-AB8D-E70ADFBA8A5F) ]
+	dispinterface IEasyPolygon
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyPolygon)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyPolygon)
+			[id(1)] void AddRing(IUnknown* ring);
+			[id(2)] IUnknown* GetRing(long index);
+			[id(3)] long GetRingCount();
+			[id(4)] void ClearRings();
+			[id(5)] long innergetrawgeometryptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyPolygon
+
+	[ uuid(3177375A-4628-4761-806E-583BC09DE6B2) ]
+	coclass EasyPolygon
+	{
+		[default] dispinterface IEasyPolygon;
+	};
+
+
+
+	//  Primary dispatch interface for CEasyLayer
+	
+	[ uuid(2304DC29-87E7-47B8-82C9-EC4C4002FA64) ]
+	dispinterface IEasyLayer
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyLayer)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyLayer)
+			[id(1)] void GetExtent(double* minx, double* miny, double* maxx, double* maxy);
+			[id(2)] double GetBascScale();
+			[id(3)] void SetName(BSTR layername);
+			[id(4)] BSTR GetName();
+			[id(5)] void SetVisible(boolean visible);
+			[id(6)] boolean GetVisible();
+			[id(7)] void SetAlpha(long alpha);
+			[id(8)] long GetAlpha();
+			[id(9)] void SetScaleLimit(double maxscale, double minscale);
+			[id(10)] void GetScaleLimit(double* maxscale, double* minscale);
+			[id(11)] void SetTag(long tag);
+			[id(12)] long GetTag();
+			[id(13)] void SetSelectable(boolean selectable);
+			[id(14)] boolean GetSelectable();
+			[id(15)] long Select(double minx, double miny, double maxx, double maxy, boolean partialselect, boolean append);
+			[id(16)] long Deselect(double minx, double miny, double maxx, double maxy, boolean partialselect);
+			[id(17)] long GetSelectCount();
+			[id(18)] void ClearSelection();
+			[id(19)] EasyLayerType GetLayerType();
+			[id(20)] long GetSubLayerCount();
+			[id(21)] IUnknown* GetSubLayer(long index);
+			[id(22)] boolean DeleteSubLayer(long index);
+			[id(23)] boolean AddSubLayer(IUnknown* layer);
+			[id(24)] boolean ClearLayers();
+			[id(25)] long innergetrawlayerptr(boolean addref);
+			[id(26)] long GetAllSubLayerCount();
+			[id(27)] boolean DeleteSubLayerEx(IUnknown* sublayer);
+			[id(28)] boolean SetSubLayerOrder(IUnknown* sublayer, long neworder);
+			[id(29)] EasyFeatureLayerType GetFeatureLayerType();
+			[id(30)] boolean GetFeatureLayerInfo(double* basescale, EasyUnits* mapunit, double* precision);
+			[id(31)] boolean SetDefaultSymbolFromLib(BSTR symbollibfile, long symbolindex);
+			[id(32)] boolean SetDefaultSymbolFromUI();
+			[id(33)] boolean SetDefaultSymbolParam(IUnknown* param);
+			[id(34)] IUnknown* GetDefaultSymbolParam();
+			[id(35)] long GetAttribFieldCount();
+			[id(36)] EasyFieldType GetAttribFieldType(long fieldindex);
+			[id(37)] BSTR GetAttribFieldName(long fieldindex);
+			[id(38)] IUnknown* GetSelection();
+			[id(39)] IUnknown* GetFeature(long fid);
+			[id(40)] IUnknown* CreateFeature();
+			[id(41)] void DeleteSelectedObjects();
+			[id(42)] void MoveSelectedObject(double deltax, double deltay);
+			[id(43)] long AddGeometryElement(IUnknown* geometry);
+			[id(44)] long AddTextElement(double point_x, double point_y, BSTR text);
+			[id(45)] IUnknown* GetElement(long id, BSTR* text, boolean* istext);
+			[id(46)] boolean SetElement(long id, IUnknown* geometry, BSTR text);
+			[id(47)] boolean RemoveElement(long id);
+			[id(48)] IUnknown* Identify(double minx, double miny, double maxx, double maxy, boolean partialselect);
+			[id(49)] void SelectAll();
+			[id(50)] IUnknown* FindSubLayer(BSTR layername);
+			[id(51)] boolean ModifyGPSPoint(long fid, double x, double y);
+			[id(52)] boolean GetMapEditable();
+			[id(53)] boolean SaveEdit();
+			[id(54)] boolean DiscardEdit();
+			[id(55)] boolean SetUndoPoint();
+			[id(56)] boolean Undo();
+			[id(57)] boolean Redo();
+			[id(58)] boolean Undoable();
+			[id(59)] boolean Redoable();
+			[id(60)] boolean SetMapEditable(boolean editable);
+			[id(61)] boolean ShowRendererUI();
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyLayer
+
+	[ uuid(9DBB189A-AB23-454D-9487-4B957E9B11BF) ]
+	coclass EasyLayer
+	{
+		[default] dispinterface IEasyLayer;
+	};
+
+
+	//  Primary dispatch interface for CLayerDisplayParams
+	
+	[ uuid(6AD4690F-540A-4695-9AFF-E3877E059A84) ]
+	dispinterface ILayerDisplayParams
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CLayerDisplayParams)
+			[id(1)] long Color;
+			[id(2)] long OuterLineColor;
+			[id(3)] double OuterLineWidth;
+			[id(4)] double FontWidth;
+			[id(5)] double FontHeight;
+			[id(6)] double PointAngle;
+			[id(7)] double PointSize;
+			[id(8)] double LineWidth;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CLayerDisplayParams)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CLayerDisplayParams
+
+	[ uuid(309F0501-8849-4450-8698-120ABBB3073C) ]
+	coclass LayerDisplayParams
+	{
+		[default] dispinterface ILayerDisplayParams;
+	};
+
+
+	//  Primary dispatch interface for CEasyFeature
+	
+	[ uuid(22E4F803-AA0B-49BF-9804-D1E18F620DE1) ]
+	dispinterface IEasyFeature
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyFeature)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyFeature)
+			[id(1)] boolean SetGeometry(IUnknown* geometry);
+			[id(2)] IUnknown* GetGeometry();
+			[id(3)] long GetFid();
+			[id(4)] IUnknown* GetMBR();
+			[id(5)] IUnknown* GetLayer();
+			[id(6)] long GetFieldCount();
+			[id(7)] boolean SetFieldValue(long fieldindex, BSTR fieldvalue);
+			[id(8)] BSTR GetFieldValue(long fieldindex);
+			[id(9)] boolean SetAnnotation(BSTR annotation);
+			[id(10)] BSTR GetAnnotation();
+			[id(11)] boolean Delete();
+			[id(12)] boolean Update();
+			[id(13)] long innergetrawfeatureptr(boolean addref);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyFeature
+
+	[ uuid(0EF66952-FCED-4AF1-8D85-A3E98045E72E) ]
+	coclass EasyFeature
+	{
+		[default] dispinterface IEasyFeature;
+	};
+
+
+	//  Primary dispatch interface for CEasyIntArray
+	
+	[ uuid(0A61DBBC-F43E-4622-B1CB-E2E91E823957) ]
+	dispinterface IEasyIntArray
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEasyIntArray)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEasyIntArray)
+			[id(1)] long Add(long newvalue);
+			[id(2)] boolean Remove(long index);
+			[id(3)] long GetCount();
+			[id(4)] void Clear();
+			[id(5)] boolean GetAt(long index, long* value);
+			[id(6)] boolean SetAt(long index, long newvalue);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEasyIntArray
+
+	[ uuid(F98CE28A-524F-4239-B52C-844956725243) ]
+	coclass EasyIntArray
+	{
+		[default] dispinterface IEasyIntArray;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

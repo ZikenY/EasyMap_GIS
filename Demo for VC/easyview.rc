@@ -1,0 +1,493 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\easyview.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\easyview.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\bitmap2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_MENUITEM_WORKSPACENEW
+    BUTTON      ID_MENUITEM_WORKSPACEOPEN
+    BUTTON      ID_MENUITEM_WORKSPACESAVE
+    SEPARATOR
+    BUTTON      ID_MENUITEM_ZOOMIN
+    BUTTON      ID_MENUITEM_ZOOMOUT
+    BUTTON      ID_MENUITEM_ZOOMPAN
+    BUTTON      ID_MENUITEM_ZOOMALL
+    BUTTON      ID_MENUITEM_REFRESHVIEW
+    SEPARATOR
+    BUTTON      ID_MENUITEM_LAYERTREE
+    SEPARATOR
+    BUTTON      ID_MENUITEM_LOADDATA
+    BUTTON      ID_MENUITEM_IDENTIFY
+    SEPARATOR
+    BUTTON      ID_MENUITEM_UNDO
+    BUTTON      ID_MENUITEM_REDO
+    BUTTON      ID_MENUITEM_SAVEEDIT
+    BUTTON      ID_MENUITEM_CANCELEDIT
+    SEPARATOR
+    BUTTON      ID_MENUITEM_SELECT
+    BUTTON      ID_MENUITEM_DESELECT
+    BUTTON      ID_MENUITEM_DELETE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "工作空间"
+    BEGIN
+        MENUITEM "新建",                        ID_MENUITEM_WORKSPACENEW
+        MENUITEM "打开",                        ID_MENUITEM_WORKSPACEOPEN
+        MENUITEM "保存",                        ID_MENUITEM_WORKSPACESAVE
+        MENUITEM "另存为",                      ID_MENUITEM_WORKSPACESAVEAS
+        MENUITEM "退出",                        ID_APP_EXIT
+    END
+    POPUP "视图"
+    BEGIN
+        MENUITEM "放大",                        ID_MENUITEM_ZOOMIN
+        MENUITEM "缩小",                        ID_MENUITEM_ZOOMOUT
+        MENUITEM "漫游",                        ID_MENUITEM_ZOOMPAN
+        MENUITEM "全屏",                        ID_MENUITEM_ZOOMALL
+        MENUITEM "刷新",                        ID_MENUITEM_REFRESHVIEW
+        MENUITEM "俯仰",                        ID_MENUITEM32848
+    END
+    POPUP "数据"
+    BEGIN
+        MENUITEM "加载",                        ID_MENUITEM_LOADDATA
+        MENUITEM "要素查询",                    ID_MENUITEM_IDENTIFY
+    END
+    POPUP "编辑"
+    BEGIN
+        MENUITEM "撤销编辑",                    ID_MENUITEM_UNDO
+        MENUITEM "重复编辑",                    ID_MENUITEM_REDO
+        MENUITEM "保存编辑",                    ID_MENUITEM_SAVEEDIT
+        MENUITEM "放弃编辑",                    ID_MENUITEM_CANCELEDIT
+        MENUITEM SEPARATOR
+        MENUITEM "选择/移动对象",               ID_MENUITEM_SELECT
+        MENUITEM "清除选择",                    ID_MENUITEM_DESELECT
+        MENUITEM "删除对象",                    ID_MENUITEM_DELETE
+    END
+    POPUP "书签"
+    BEGIN
+        MENUITEM "增加书签",                    ID_MENUITEM_ADDBOOKMARK
+        MENUITEM "下一个书签",                  ID_MENUITEM_NEXTBOOKMARK
+        MENUITEM "上一个书签",                  ID_MENUITEM_PREVIOUSBOOKMARK
+        MENUITEM "删除书签",                    ID_MENUITEM_DELETECURRENTBOOKMARK
+
+        MENUITEM "清除书签",                    ID_MENUITEM_CLEARBOOKMARKS
+    END
+    POPUP "查看"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "关于 easyview(&A)...",        ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 easyview"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "easyview 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DIALOG_LAYERTREE DIALOGEX 0, 0, 100, 257
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "图层"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_LAYERS,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER,1,2,98,254
+END
+
+IDD_DIALOG_IDENTIFYRESULT DIALOGEX 0, 0, 230, 118
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "查询结果"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,8,8,212,100,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+END
+
+IDD_DIALOG_LOADSLIMPARAMS DIALOGEX 0, 0, 140, 124
+STYLE WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "参数设置"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,99,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,77,99,50,14
+    LTEXT           "坐标单位",IDC_STATIC,8,9,35,9
+    COMBOBOX        IDC_COMBO_UNIT,46,7,83,46,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "比例尺",IDC_STATIC,8,25,35,9
+    EDITTEXT        IDC_EDIT_SCALE,46,23,82,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "坐标精度",IDC_STATIC,8,42,35,9
+    EDITTEXT        IDC_EDIT_PRECISION,46,40,82,12,ES_AUTOHSCROLL
+    LTEXT           "索引级数",IDC_STATIC,8,59,35,9
+    EDITTEXT        IDC_EDIT_INDEXLEVEL,46,57,82,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "只读",IDC_CHECK_READONLY,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,96,76,32,12
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "easyview Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "easyview\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2007\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "easyview.EXE\0"
+            VALUE "ProductName", "easyview 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_LOADSLIMPARAMS DLGINIT
+BEGIN
+    IDC_COMBO_UNIT, 0x403, 7, 0
+0x4544, 0x5247, 0x4545, "\000" 
+    IDC_COMBO_UNIT, 0x403, 2, 0
+0x004d, 
+    IDC_COMBO_UNIT, 0x403, 3, 0
+0x4d4b, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_CROSS        CURSOR  DISCARDABLE     "res\\CROSS.CUR"
+IDC_CURSOR_NORMAL       CURSOR  DISCARDABLE     "res\\NORMAL.CUR"
+IDC_CURSOR_PAN          CURSOR  DISCARDABLE     "res\\PAN.CUR"
+IDC_CURSOR_PANNING      CURSOR  DISCARDABLE     "res\\PANING.CUR"
+IDC_CURSOR_INDETIFY     CURSOR  DISCARDABLE     "res\\SELECT.cur"
+IDC_CURSOR_ZOOMIN       CURSOR  DISCARDABLE     "res\\ZOOMIN.CUR"
+IDC_CURSOR_ZOOMOUT      CURSOR  DISCARDABLE     "res\\ZOOMOUT.CUR"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "easyview"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "easyview"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MENUITEM_WORKSPACENEW "新建工作空间\n新建工作空间"
+    ID_MENUITEM_WORKSPACEOPEN "打开工作空间\n打开工作空间"
+    ID_MENUITEM_WORKSPACESAVE "保存工作空间\n保存工作空间"
+    ID_MENUITEM_WORKSPACESAVEAS "工作空间另存为"
+    ID_MENUITEM_ZOOMIN      "视图放大\n视图放大"
+    ID_MENUITEM_ZOOMOUT     "视图缩小\n视图缩小"
+    ID_MENUITEM_ZOOMPAN     "视图漫游\n视图漫游"
+    ID_MENUITEM_ZOOMALL     "显示全图\n显示全图"
+    ID_MENUITEM_REFRESHVIEW "刷新视图\n刷新视图"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MENUITEM_LAYERTREE   "图层列表\n图层列表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MENUITEM_LOADDATA    "加载数据\n加载数据"
+    ID_MENUITEM_IDENTIFY    "要素查询\n要素查询"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MENUITEM_UNDO        "撤销编辑\n撤销编辑"
+    ID_MENUITEM_REDO        "重复编辑\n重复编辑"
+    ID_MENUITEM_SAVEEDIT    "保存编辑\n保存编辑"
+    ID_MENUITEM_CANCELEDIT  "放弃编辑\n放弃编辑"
+    ID_MENUITEM_SELECT      "左键选择/右键移动\n左键选择/右键移动"
+    ID_MENUITEM_MOVE        "移动对象/n移动对象"
+    ID_MENUITEM_DELETE      "删除对象\n删除对象"
+    ID_MENUITEM_DESELECT    "清除选择\n清除选择"
+    ID_MENUITEM_FREEHAND    "随手画\n随手画"
+    ID_MENUITEM_ADDBOOKMARK "增加书签"
+    ID_MENUITEM_NEXTBOOKMARK "下一个标签"
+    ID_MENUITEM_PREVIOUSBOOKMARK "上一个标签"
+    ID_MENUITEM_DELETECURRENTBOOKMARK "删除书签"
+    ID_MENUITEM_CLEARBOOKMARKS "清除书签"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\easyview.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

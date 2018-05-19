@@ -1,0 +1,23 @@
+LIBRARY EASYLIB
+DESCRIPTION "easylib"
+EXPORTS
+	CreateObj
+	Instantiate
+	CreateFileMappingStream
+	CreateGeometry
+	Geometry2Stream
+	Stream2Geometry
+	CreateSimplePointSymbol
+	CreateEnvelopePointSymbol
+	CreatePolyPointSymbol
+	CreateSimpleLineSymbol
+	CreatePointLineSymbol
+	CreateSimpleFillSymbol
+	CreatePointFillSymbol
+	CreateSimpleTextSymbol
+	CreateMultiPointSymbol
+	CreateMultiLineSymbol
+	CreateMultiFillSymbol
+    CreateSlimData
+	LoadSlimData
+	LoadShapeFile

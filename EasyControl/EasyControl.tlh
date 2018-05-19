@@ -1,0 +1,858 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (8c424c18).
+//
+// EasyControl.tlh
+//
+// C++ source equivalent of Win32 type library EasyControl.tlb
+// compiler-generated file created 05/24/13 at 09:36:25 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("aedd17eb-a11a-4fed-a68b-fe7a3ac5c93e"))
+/* dispinterface */ _DEasyControl;
+struct __declspec(uuid("2baf88e9-c1d9-4b54-b466-f560e3d19a79"))
+/* dispinterface */ _DEasyControlEvents;
+struct /* coclass */ EasyControl;
+struct __declspec(uuid("b2c65505-f2e7-4035-8156-a4266e57cea1"))
+/* dispinterface */ IEasyEnvelope;
+struct /* coclass */ EasyEnvelope;
+struct __declspec(uuid("3eb46055-e4da-46bd-9bbb-a156d25f64c9"))
+/* dispinterface */ IEasyPoint;
+struct /* coclass */ EasyPoint;
+struct __declspec(uuid("74c11a15-b516-4f45-97bd-c866be2eb1f6"))
+/* dispinterface */ IEasyPoints;
+struct /* coclass */ EasyPoints;
+struct __declspec(uuid("976e1897-ae8c-4219-b7bd-6b65d41a0d7f"))
+/* dispinterface */ IEasyPath;
+struct /* coclass */ EasyPath;
+struct __declspec(uuid("9c5ac2f8-b7a3-47fa-83a8-d918d09ee103"))
+/* dispinterface */ IEasyRing;
+struct /* coclass */ EasyRing;
+struct __declspec(uuid("c01c9bac-afe2-4236-ace7-7074abe05fba"))
+/* dispinterface */ IEasyPolyline;
+struct /* coclass */ EasyPolyline;
+struct __declspec(uuid("a19d8a1a-1421-4dd7-ab8d-e70adfba8a5f"))
+/* dispinterface */ IEasyPolygon;
+struct /* coclass */ EasyPolygon;
+struct __declspec(uuid("2304dc29-87e7-47b8-82c9-ec4c4002fa64"))
+/* dispinterface */ IEasyLayer;
+struct /* coclass */ EasyLayer;
+struct __declspec(uuid("6ad4690f-540a-4695-9aff-e3877e059a84"))
+/* dispinterface */ ILayerDisplayParams;
+struct /* coclass */ LayerDisplayParams;
+struct __declspec(uuid("22e4f803-aa0b-49bf-9804-d1e18f620de1"))
+/* dispinterface */ IEasyFeature;
+struct /* coclass */ EasyFeature;
+struct __declspec(uuid("0a61dbbc-f43e-4622-b1cb-e2e91e823957"))
+/* dispinterface */ IEasyIntArray;
+struct /* coclass */ EasyIntArray;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_DEasyControl, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(_DEasyControlEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyEnvelope, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyPoint, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyPoints, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyPath, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyRing, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyPolyline, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyPolygon, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyLayer, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(ILayerDisplayParams, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyFeature, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IEasyIntArray, __uuidof(IDispatch));
+
+//
+// Type library items
+//
+
+enum EasyMouseAction
+{
+    ActionDefault = 0,
+    ActionZoomIn = 1,
+    ActionZoomOut = 2,
+    ActionPan = 3,
+    ActionSelectByPoint = 4,
+    ActionSelectByEnvelope = 5,
+    ActionDeselectByPoint = 6,
+    ActionDeselectByEnvelope = 7,
+    ActionTrackFeature = 8,
+    ActionMoveSelectedObjects = 9,
+    ActionTrackPointElement = 10,
+    ActionTrackEnvelopeElement = 11,
+    ActionTrackCircleElement = 12,
+    ActionTrackEllipseElement = 13,
+    ActionTrackPolylineElement = 14,
+    ActionTrackPolygonElement = 15,
+    ActionTrackFreehandLineElement = 16,
+    ActionTrackFreehandFillElement = 17,
+    ActionTrackTextElement = 18
+};
+
+enum EasyUnits
+{
+    UNIT_DEGREE = 0,
+    UNIT_M = 1,
+    UNIT_KM = 2,
+    UNIT_CM = 3,
+    UNIT_MM = 4,
+    UNIT_MILE = 5,
+    UNIT_NAUTICALMILE = 6,
+    UNIT_INCH = 7,
+    UNIT_FOOT = 8
+};
+
+enum EasyLayerType
+{
+    EASYLAYERTYPE_UNKNOWN = 0,
+    EASYLAYERTYPE_GROUPLAYER = 1,
+    EASYLAYERTYPE_SLIMLAYER = 2,
+    EASYLAYERTYPE_SHAPELAYER = 3,
+    EASYLAYERTYPE_BITMAPLAYER = 4,
+    EASYLAYERTYPE_ELEMENTLAYER = 5,
+    EASYLAYERTYPE_LABELLAYER = 6
+};
+
+enum EasyFeatureLayerType
+{
+    EASYFEATURELAYERTYPE_UNKNOWN = 0,
+    EASYFEATURELAYERTYPE_POINT = 1,
+    EASYFEATURELAYERTYPE_MULTIPOINT = 2,
+    EASYFEATURELAYERTYPE_POLYLINE = 3,
+    EASYFEATURELAYERTYPE_POLYGON = 4,
+    EASYFEATURELAYERTYPE_ANNOTATION = 5
+};
+
+enum EasyFieldType
+{
+    EASYFIELDTYPE_UNKNOWN = 0,
+    EASYFIELDTYPE_SHORT = 1,
+    EASYFIELDTYPE_LONG = 2,
+    EASYFIELDTYPE_SINGLE = 3,
+    EASYFIELDTYPE_DOUBLE = 4,
+    EASYFIELDTYPE_STRING = 5
+};
+
+struct __declspec(uuid("aedd17eb-a11a-4fed-a68b-fe7a3ac5c93e"))
+_DEasyControl : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetBackColor,put=PutBackColor))
+    OLE_COLOR BackColor;
+    __declspec(property(get=GetPartialSelect,put=PutPartialSelect))
+    VARIANT_BOOL PartialSelect;
+    __declspec(property(get=GetSelectAppend,put=PutSelectAppend))
+    VARIANT_BOOL SelectAppend;
+    __declspec(property(get=GetWheelZoomable,put=PutWheelZoomable))
+    VARIANT_BOOL WheelZoomable;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    VARIANT_BOOL NewWorkspace ( );
+    VARIANT_BOOL LoadWorkspace (
+        _bstr_t filename );
+    VARIANT_BOOL SaveWorkspace (
+        _bstr_t filename );
+    HRESULT UpdateView ( );
+    HRESULT FullExtentView ( );
+    HRESULT GetMapCenter (
+        double x,
+        double y );
+    HRESULT SetMapCenter (
+        double x,
+        double y );
+    HRESULT SetScale (
+        double scale );
+    double GetScale ( );
+    HRESULT SetViewExtent (
+        double minx,
+        double miny,
+        double maxx,
+        double maxy );
+    HRESULT GetViewExtent (
+        double * minx,
+        double * miny,
+        double * maxx,
+        double * maxy );
+    HRESULT SetActionNone ( );
+    HRESULT SetActionZoomin ( );
+    HRESULT SetActionZoomout ( );
+    HRESULT SetActionPan ( );
+    HRESULT ClearLayers ( );
+    HRESULT GetFullExtent (
+        double * minx,
+        double * miny,
+        double * maxx,
+        double * maxy );
+    IUnknownPtr GetLayer (
+        long index );
+    HRESULT Window2Map (
+        long lx,
+        long ly,
+        double * dx,
+        double * dy );
+    HRESULT Map2Window (
+        double dx,
+        double dy,
+        long * lx,
+        long * ly );
+    long GetLayerCount ( );
+    long GetAllLayerCount ( );
+    IUnknownPtr LoadSlimDataEx (
+        IUnknown * grouplayer,
+        _bstr_t filename,
+        VARIANT_BOOL readonly );
+    IUnknownPtr LoadShapeFileEx (
+        IUnknown * grouplayer,
+        _bstr_t filename,
+        enum EasyUnits mapunit,
+        double basescale,
+        double precision,
+        long indexlevel,
+        VARIANT_BOOL readonly );
+    IUnknownPtr LoadOrientBmpEx (
+        IUnknown * grouplayer,
+        _bstr_t filename );
+    IUnknownPtr NewGroupLayerEx (
+        IUnknown * parentgrouplayer,
+        _bstr_t newlayername );
+    VARIANT_BOOL LoadSlimData (
+        _bstr_t filename,
+        VARIANT_BOOL readonly );
+    VARIANT_BOOL LoadShapeFile (
+        _bstr_t filename,
+        enum EasyUnits mapunit,
+        double basescale,
+        double precision,
+        long indexlevel,
+        VARIANT_BOOL readonly );
+    VARIANT_BOOL LoadOrientBmp (
+        _bstr_t filename );
+    VARIANT_BOOL NewElementLayer (
+        _bstr_t newlayername );
+    IUnknownPtr NewElementLayerEx (
+        IUnknown * grouplayer,
+        _bstr_t newlayername );
+    HRESULT SetMapUnit (
+        enum EasyUnits mapunit );
+    enum EasyUnits GetMapUnit ( );
+    HRESULT SetReferenceScale (
+        double refscale );
+    double GetReferenceScale ( );
+    VARIANT_BOOL SetLayerOrder (
+        IUnknown * layer,
+        long neworder );
+    HRESULT DeleteSelectObjects ( );
+    VARIANT_BOOL EditUndo ( );
+    VARIANT_BOOL EditRedo ( );
+    VARIANT_BOOL EditSave ( );
+    VARIANT_BOOL EditCancel ( );
+    VARIANT_BOOL IsEditDirty ( );
+    VARIANT_BOOL SetEditUndoPoint (
+        _bstr_t desc );
+    enum EasyMouseAction GetCurrentAction ( );
+    VARIANT_BOOL EditTrackFeature (
+        IUnknown * layer,
+        _bstr_t text );
+    HRESULT SelectByPoint ( );
+    HRESULT SelectByEnvelope ( );
+    HRESULT DeselectByPoint ( );
+    HRESULT DeselectByEnvelope ( );
+    HRESULT MoveSelectedObjects ( );
+    VARIANT_BOOL EditTrackPointElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackEnvelopeElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackCircleElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackEllipseElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackPolylineElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackPolygonElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackFreehandLineElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackFreehandFillElement (
+        IUnknown * layer );
+    VARIANT_BOOL EditTrackTextElement (
+        IUnknown * layer,
+        _bstr_t text );
+    VARIANT_BOOL SetNewElementSymbolParams (
+        IUnknown * params );
+    IUnknownPtr GetNewElementSymbolParams ( );
+    VARIANT_BOOL SetNewElementSymbolFromLib (
+        _bstr_t symbollibfile,
+        long symbolindex );
+    HRESULT AddHighlight (
+        IUnknown * geometry );
+    IUnknownPtr GetHighlight (
+        long index );
+    VARIANT_BOOL DeleteHighlight (
+        long index );
+    HRESULT ClearHighlight ( );
+    HRESULT RefreshWindow ( );
+    HRESULT SetHighlightParams (
+        IUnknown * params );
+    IUnknownPtr GetHighlightParams ( );
+    HRESULT SetSlimDataMapping (
+        VARIANT_BOOL mapping );
+    VARIANT_BOOL GetSlimDataMapping ( );
+    HRESULT ClearLabels ( );
+    long GetLabelLayerCount ( );
+    IUnknownPtr GetLabelLayer (
+        long index );
+    VARIANT_BOOL RemoveLabelLayer (
+        long index );
+    VARIANT_BOOL LoadLabelLayer (
+        _bstr_t esd_filename,
+        long labelfield );
+    VARIANT_BOOL SetLabelField (
+        long labellayer,
+        long labelfield );
+    long GetLabelField (
+        long labellayer );
+    HRESULT EnableLabels (
+        VARIANT_BOOL Enable );
+    VARIANT_BOOL LabelsEnabled ( );
+    VARIANT_BOOL LoadRapidDrawLayer (
+        _bstr_t esd_filename,
+        VARIANT_BOOL readonly );
+    IUnknownPtr GetRapidDrawLayer (
+        long index );
+    VARIANT_BOOL RemoveRapidDraw (
+        long index );
+    long GetRapidDrawLayerCount ( );
+    HRESULT ClearRapidDrawLayers ( );
+    VARIANT_BOOL AddBookmark (
+        _bstr_t text );
+    VARIANT_BOOL NextBookmark ( );
+    VARIANT_BOOL PreviousBookmark ( );
+    VARIANT_BOOL DeleteBookmark ( );
+    long BookmarkCount ( );
+    HRESULT ClearBookmarks ( );
+    IUnknownPtr RapidDrawGPS ( );
+    IUnknownPtr FindLayer (
+        _bstr_t layername );
+    HRESULT SetPlaneRotate (
+        double degree );
+    double GetPlaneRotate ( );
+    HRESULT SetAttitude (
+        double degree );
+    double GetAttitude ( );
+    HRESULT SetRotateCenter (
+        double x,
+        double y );
+    HRESULT GetRotateCenter (
+        double * x,
+        double * y );
+    HRESULT DisableActiveBookmarkShow ( );
+    HRESULT AboutBox ( );
+
+    // Properties:
+    OLE_COLOR GetBackColor ( );
+    void PutBackColor ( OLE_COLOR _val );
+    VARIANT_BOOL GetPartialSelect ( );
+    void PutPartialSelect ( VARIANT_BOOL _val );
+    VARIANT_BOOL GetSelectAppend ( );
+    void PutSelectAppend ( VARIANT_BOOL _val );
+    VARIANT_BOOL GetWheelZoomable ( );
+    void PutWheelZoomable ( VARIANT_BOOL _val );
+};
+
+struct __declspec(uuid("2baf88e9-c1d9-4b54-b466-f560e3d19a79"))
+_DEasyControlEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT ViewExtentChange (
+        double minx,
+        double miny,
+        double maxx,
+        double maxy );
+    HRESULT MouseDown (
+        short Button,
+        short Shift,
+        OLE_XPOS_PIXELS x,
+        OLE_YPOS_PIXELS y );
+    HRESULT MouseUp (
+        short Button,
+        short Shift,
+        OLE_XPOS_PIXELS x,
+        OLE_YPOS_PIXELS y );
+    HRESULT MouseMove (
+        short Button,
+        short Shift,
+        OLE_XPOS_PIXELS x,
+        OLE_YPOS_PIXELS y );
+    HRESULT KeyDown (
+        short * KeyCode,
+        short Shift );
+    HRESULT KeyUp (
+        short * KeyCode,
+        short Shift );
+    HRESULT NewFeatureTracked (
+        long fid,
+        VARIANT_BOOL * setundopoint );
+    HRESULT OnPaint (
+        long dc );
+    HRESULT ObjectsMoved (
+        VARIANT_BOOL * setundopoint );
+    HRESULT NewElementTracked (
+        long id,
+        VARIANT_BOOL * setundopoint );
+};
+
+struct __declspec(uuid("fce3d833-3fb6-4503-941d-5ca989798b89"))
+EasyControl;
+    // [ default ] dispinterface _DEasyControl
+    // [ default, source ] dispinterface _DEasyControlEvents
+
+struct __declspec(uuid("b2c65505-f2e7-4035-8156-a4266e57cea1"))
+IEasyEnvelope : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT SetCoordinates (
+        double minx,
+        double miny,
+        double maxx,
+        double maxy );
+    HRESULT GetCoordinates (
+        double * minx,
+        double * miny,
+        double * maxx,
+        double * maxy );
+    long innergetrawgeometryptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("5563121a-7787-4fce-93f7-32234f92151c"))
+EasyEnvelope;
+    // [ default ] dispinterface IEasyEnvelope
+
+struct __declspec(uuid("3eb46055-e4da-46bd-9bbb-a156d25f64c9"))
+IEasyPoint : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT SetCoordinates (
+        double x,
+        double y,
+        double z );
+    HRESULT GetCoordinates (
+        double * x,
+        double * y,
+        double * z );
+    long innergetrawgeometryptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("123acc11-9497-4421-9d2a-c6d745873de5"))
+EasyPoint;
+    // [ default ] dispinterface IEasyPoint
+
+struct __declspec(uuid("74c11a15-b516-4f45-97bd-c866be2eb1f6"))
+IEasyPoints : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT AddPoint (
+        double x,
+        double y,
+        double z );
+    VARIANT_BOOL GetPoint (
+        double * x,
+        double * y,
+        double * z,
+        long index );
+    long GetPointCount ( );
+    HRESULT ClearPoints ( );
+    long innergetrawgeometryptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("6d82eb14-1a81-45cb-b289-a8f82f09b2d2"))
+EasyPoints;
+    // [ default ] dispinterface IEasyPoints
+
+struct __declspec(uuid("976e1897-ae8c-4219-b7bd-6b65d41a0d7f"))
+IEasyPath : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT AddPoint (
+        double x,
+        double y,
+        double z );
+    VARIANT_BOOL GetPoint (
+        double * x,
+        double * y,
+        double * z,
+        long index );
+    long GetPointCount ( );
+    HRESULT ClearPoints ( );
+    long innergetrawgeometryptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("8bfbc8ff-476d-4c67-a63e-0519384a9311"))
+EasyPath;
+    // [ default ] dispinterface IEasyPath
+
+struct __declspec(uuid("9c5ac2f8-b7a3-47fa-83a8-d918d09ee103"))
+IEasyRing : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT AddPoint (
+        double x,
+        double y,
+        double z );
+    VARIANT_BOOL GetPoint (
+        double * x,
+        double * y,
+        double * z,
+        long index );
+    long GetPointCount ( );
+    HRESULT ClearPoints ( );
+    long innergetrawgeometryptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("3631b8dc-0be1-443f-a65b-adb58f907ea2"))
+EasyRing;
+    // [ default ] dispinterface IEasyRing
+
+struct __declspec(uuid("c01c9bac-afe2-4236-ace7-7074abe05fba"))
+IEasyPolyline : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT AddPath (
+        IUnknown * path );
+    IUnknownPtr GetPath (
+        long index );
+    long GetPathCount ( );
+    HRESULT ClearPath ( );
+    long innergetrawgeometryptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("cd30f34e-892e-486e-a8f4-af5d6f0ac9e3"))
+EasyPolyline;
+    // [ default ] dispinterface IEasyPolyline
+
+struct __declspec(uuid("a19d8a1a-1421-4dd7-ab8d-e70adfba8a5f"))
+IEasyPolygon : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT AddRing (
+        IUnknown * ring );
+    IUnknownPtr GetRing (
+        long index );
+    long GetRingCount ( );
+    HRESULT ClearRings ( );
+    long innergetrawgeometryptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("3177375a-4628-4761-806e-583bc09de6b2"))
+EasyPolygon;
+    // [ default ] dispinterface IEasyPolygon
+
+struct __declspec(uuid("2304dc29-87e7-47b8-82c9-ec4c4002fa64"))
+IEasyLayer : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT GetExtent (
+        double * minx,
+        double * miny,
+        double * maxx,
+        double * maxy );
+    double GetBascScale ( );
+    HRESULT SetName (
+        _bstr_t layername );
+    _bstr_t GetName ( );
+    HRESULT SetVisible (
+        VARIANT_BOOL visible );
+    VARIANT_BOOL GetVisible ( );
+    HRESULT SetAlpha (
+        long alpha );
+    long GetAlpha ( );
+    HRESULT SetScaleLimit (
+        double maxscale,
+        double minscale );
+    HRESULT GetScaleLimit (
+        double * maxscale,
+        double * minscale );
+    HRESULT SetTag (
+        long tag );
+    long GetTag ( );
+    HRESULT SetSelectable (
+        VARIANT_BOOL selectable );
+    VARIANT_BOOL GetSelectable ( );
+    long Select (
+        double minx,
+        double miny,
+        double maxx,
+        double maxy,
+        VARIANT_BOOL PartialSelect,
+        VARIANT_BOOL append );
+    long Deselect (
+        double minx,
+        double miny,
+        double maxx,
+        double maxy,
+        VARIANT_BOOL PartialSelect );
+    long GetSelectCount ( );
+    HRESULT ClearSelection ( );
+    enum EasyLayerType GetLayerType ( );
+    long GetSubLayerCount ( );
+    IUnknownPtr GetSubLayer (
+        long index );
+    VARIANT_BOOL DeleteSubLayer (
+        long index );
+    VARIANT_BOOL AddSubLayer (
+        IUnknown * layer );
+    VARIANT_BOOL ClearLayers ( );
+    long innergetrawlayerptr (
+        VARIANT_BOOL addref );
+    long GetAllSubLayerCount ( );
+    VARIANT_BOOL DeleteSubLayerEx (
+        IUnknown * sublayer );
+    VARIANT_BOOL SetSubLayerOrder (
+        IUnknown * sublayer,
+        long neworder );
+    enum EasyFeatureLayerType GetFeatureLayerType ( );
+    VARIANT_BOOL GetFeatureLayerInfo (
+        double * basescale,
+        enum EasyUnits * mapunit,
+        double * precision );
+    VARIANT_BOOL SetDefaultSymbolFromLib (
+        _bstr_t symbollibfile,
+        long symbolindex );
+    VARIANT_BOOL SetDefaultSymbolFromUI ( );
+    VARIANT_BOOL SetDefaultSymbolParam (
+        IUnknown * param );
+    IUnknownPtr GetDefaultSymbolParam ( );
+    long GetAttribFieldCount ( );
+    enum EasyFieldType GetAttribFieldType (
+        long fieldindex );
+    _bstr_t GetAttribFieldName (
+        long fieldindex );
+    IUnknownPtr GetSelection ( );
+    IUnknownPtr GetFeature (
+        long fid );
+    IUnknownPtr CreateFeature ( );
+    HRESULT DeleteSelectedObjects ( );
+    HRESULT MoveSelectedObject (
+        double deltax,
+        double deltay );
+    long AddGeometryElement (
+        IUnknown * geometry );
+    long AddTextElement (
+        double point_x,
+        double point_y,
+        _bstr_t text );
+    IUnknownPtr GetElement (
+        long id,
+        BSTR * text,
+        VARIANT_BOOL * istext );
+    VARIANT_BOOL SetElement (
+        long id,
+        IUnknown * geometry,
+        _bstr_t text );
+    VARIANT_BOOL RemoveElement (
+        long id );
+    IUnknownPtr Identify (
+        double minx,
+        double miny,
+        double maxx,
+        double maxy,
+        VARIANT_BOOL PartialSelect );
+    HRESULT SelectAll ( );
+    IUnknownPtr FindSubLayer (
+        _bstr_t layername );
+    VARIANT_BOOL ModifyGPSPoint (
+        long fid,
+        double x,
+        double y );
+    VARIANT_BOOL GetMapEditable ( );
+    VARIANT_BOOL SaveEdit ( );
+    VARIANT_BOOL DiscardEdit ( );
+    VARIANT_BOOL setundopoint ( );
+    VARIANT_BOOL Undo ( );
+    VARIANT_BOOL Redo ( );
+    VARIANT_BOOL Undoable ( );
+    VARIANT_BOOL Redoable ( );
+    VARIANT_BOOL SetMapEditable (
+        VARIANT_BOOL editable );
+    VARIANT_BOOL ShowRendererUI ( );
+};
+
+struct __declspec(uuid("9dbb189a-ab23-454d-9487-4b957e9b11bf"))
+EasyLayer;
+    // [ default ] dispinterface IEasyLayer
+
+struct __declspec(uuid("6ad4690f-540a-4695-9aff-e3877e059a84"))
+ILayerDisplayParams : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetColor,put=PutColor))
+    long Color;
+    __declspec(property(get=GetOuterLineColor,put=PutOuterLineColor))
+    long OuterLineColor;
+    __declspec(property(get=GetOuterLineWidth,put=PutOuterLineWidth))
+    double OuterLineWidth;
+    __declspec(property(get=GetFontWidth,put=PutFontWidth))
+    double FontWidth;
+    __declspec(property(get=GetFontHeight,put=PutFontHeight))
+    double FontHeight;
+    __declspec(property(get=GetPointAngle,put=PutPointAngle))
+    double PointAngle;
+    __declspec(property(get=GetPointSize,put=PutPointSize))
+    double PointSize;
+    __declspec(property(get=GetLineWidth,put=PutLineWidth))
+    double LineWidth;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Properties:
+    long GetColor ( );
+    void PutColor ( long _val );
+    long GetOuterLineColor ( );
+    void PutOuterLineColor ( long _val );
+    double GetOuterLineWidth ( );
+    void PutOuterLineWidth ( double _val );
+    double GetFontWidth ( );
+    void PutFontWidth ( double _val );
+    double GetFontHeight ( );
+    void PutFontHeight ( double _val );
+    double GetPointAngle ( );
+    void PutPointAngle ( double _val );
+    double GetPointSize ( );
+    void PutPointSize ( double _val );
+    double GetLineWidth ( );
+    void PutLineWidth ( double _val );
+};
+
+struct __declspec(uuid("309f0501-8849-4450-8698-120abbb3073c"))
+LayerDisplayParams;
+    // [ default ] dispinterface ILayerDisplayParams
+
+struct __declspec(uuid("22e4f803-aa0b-49bf-9804-d1e18f620de1"))
+IEasyFeature : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    VARIANT_BOOL SetGeometry (
+        IUnknown * geometry );
+    IUnknownPtr GetGeometry ( );
+    long GetFid ( );
+    IUnknownPtr GetMBR ( );
+    IUnknownPtr GetLayer ( );
+    long GetFieldCount ( );
+    VARIANT_BOOL SetFieldValue (
+        long fieldindex,
+        _bstr_t fieldvalue );
+    _bstr_t GetFieldValue (
+        long fieldindex );
+    VARIANT_BOOL SetAnnotation (
+        _bstr_t annotation );
+    _bstr_t GetAnnotation ( );
+    VARIANT_BOOL Delete ( );
+    VARIANT_BOOL Update ( );
+    long innergetrawfeatureptr (
+        VARIANT_BOOL addref );
+};
+
+struct __declspec(uuid("0ef66952-fced-4af1-8d85-a3e98045e72e"))
+EasyFeature;
+    // [ default ] dispinterface IEasyFeature
+
+struct __declspec(uuid("0a61dbbc-f43e-4622-b1cb-e2e91e823957"))
+IEasyIntArray : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    long Add (
+        long newvalue );
+    VARIANT_BOOL Remove (
+        long index );
+    long GetCount ( );
+    HRESULT Clear ( );
+    VARIANT_BOOL GetAt (
+        long index,
+        long * value );
+    VARIANT_BOOL SetAt (
+        long index,
+        long newvalue );
+};
+
+struct __declspec(uuid("f98ce28a-524f-4239-b52c-844956725243"))
+EasyIntArray;
+    // [ default ] dispinterface IEasyIntArray
+
+//
+// Wrapper method implementations
+//
+
+#include "EasyControl.tli"
+
+#pragma pack(pop)
