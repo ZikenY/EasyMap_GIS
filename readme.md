@@ -1,5 +1,7 @@
 ## **Tabby's EasyMap is a lightweight, opensource C++ GIS development platform**
 
+core library: /easylib implemented by C++
+
 ![Alt text](bin/screen_shot01.JPG?raw=true "EasyMap Desktop")<br/>
 
 ### Feature structure of spatial data:<br/>
@@ -25,6 +27,3 @@
 ### Topological network module and best path analysis on city street:<br/>
 
 ![Alt text](bin/screen_shot00.JPG?raw=true "3D Navigation Demo")<br/>
-
-The compiler used for core library easylib: Visual C++ 6.0/2005<br/>
-OK I know, toooooo oooold...
