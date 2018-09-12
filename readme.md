@@ -1,8 +1,8 @@
 ## **Tabby's EasyMap is a lightweight, opensource C++ GIS development platform**
 
-### I wrote EasyMap for my Master degree project originally. After graduation(Master), I continued to maintain it and added many new features to it in couple years. EasyMap is developed from C++ and consists of more than 30 replaceable components. The architecture is highly expendable. Several GIS related projects were developed by me and my friends using EasyMap as the underlying library.
+#### I wrote EasyMap for my Master degree project originally. After graduation(Master), I continued to maintain it and added many new features to it in couple years. EasyMap is developed from C++ and consists of more than 30 replaceable components. The architecture is highly expendable. Several GIS related projects were developed by me and my friends using EasyMap as the underlying library.
 
-core library: /easylib implemented by C++
+#### core library: /easylib implemented by C++
 
 ![Alt text](bin/screen_shot01.JPG?raw=true "EasyMap Desktop")<br/>
 
